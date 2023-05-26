@@ -3,7 +3,7 @@
 #define endl "\n"
 using namespace std;
 #define mod 1000000007
-#define N 1000006
+#define N 20000006
 int fact[N];
 
 int powerMod(int a,int b){
@@ -13,9 +13,9 @@ int powerMod(int a,int b){
 		int x = powerMod(a, b / 2);
 		return (x * x) % mod;
 	}
-	else{ 
+	else{
 		int x = powerMod(a, b / 2);
-		return ((x * x) % mod * a) % mod;
+		return (((x * x) % mod )* a) % mod;
 	}
 	return 0;
 }
@@ -30,7 +30,7 @@ int nCrMod(int n,int r){
 		return 1;
 	if(r > n)
 		return 0;
-	return (fact[n] * inverseMod(fact[r] * fact[n - r]) % mod) % mod;
+	return (fact[n] * (inverseMod((fact[r] * fact[n - r]) % mod))) % mod;
 }
 int32_t main()
 {
