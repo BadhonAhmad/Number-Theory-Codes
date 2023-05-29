@@ -2,7 +2,7 @@
 #define int long long
 #define endl "\n"
 using namespace std;
-const int N = 1e5 + 10;
+
 int32_t main()
 {
     string s,p;
@@ -23,6 +23,6 @@ int32_t main()
                 return 0;
             }
         }
-    }
+    }//complexity=O(m*(n-m))
     cout << "pattern is not found" << endl;
 }
