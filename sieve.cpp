@@ -1,16 +1,11 @@
-#define N 2000006
+#include<bits/stdc++.h>
+using namespace std;
+#define endl "\n"
+#define int long long
+const int N=1e7+10;
+int is_prime[N];
+vector<int>prime;
 
-vector<ll> prime_divisor[N];
-void primedivisors(){
-    for(int i = 2; i < N; i++){
-        if(prime_divisor[i].empty()){
-            for(int j = i; j < N; j+=i){
-                prime_divisor[j].push_back(i);
-            }
-        }
-    }
-}
-//seive of eratosthens
 void primeGen ( int n ) // give sqroot of given n while computing prime facto of n;
 {
     n += 10;
@@ -31,4 +26,14 @@ void primeGen ( int n ) // give sqroot of given n while computing prime facto of
     for ( int i = 3; i <= n; i += 2 ) {
         if ( is_prime[i] == 1 ) prime.push_back ( i );
     }
+}
+
+int32_t main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int n; cin>>n;
+    primeGen(n);
+    for(auto it:prime) cout<<it<<' ';
+    return 0;
 }
