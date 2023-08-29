@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 const int M = 1e9 + 7;
 
 int binExpIt(int a, int b)
